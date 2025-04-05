@@ -132,24 +132,24 @@ def crossover(parent1,parent2):
 
                 ##############MUTATION####################
 
-def mutation(enfant,proba_mutation) :
+def mutation(enfant) :
     #il s'agit d'échanger  la postion des villes  pour obtenir un nouveau chemin
     # exemple = [1,2,3,4,5] -> [1,3,2,4,5] => on a échangé les places de 2 et 3 pour obtenir un new individu
     #On a vu dans le cours que chaque élement(chaque ville) des individus(d'un chemin) peut  changer aléatoirement 
     #avec une probabilité P(P<0.005) 
-    #Quand nous allons faire appel à la fonction mutation nous allons donc définir une proba_mutaion avec laquelle 
-    #deux villes pourront chnager d'emplacement
-
-    if random.random() < proba_mutation :
+    #On va donc définir une proba_mutaion = 0.05 avec laquelle on ferra le test pour savoir si deux villes pourront chnager d'emplacement
+    enfant_mute = enfant[:]
+    proba_mutation = 0.1 # j'avais utilisé une proba de 0.05 mais je ne voyais pas de mutaion lors du test donc j'ai mis comme proba 0.1
+    if random.random() < proba_mutation :#si une valeur aléatoire choisi entre [0,1] avec 0 et 1 exclu est inferieur à proba_mutation 
 #on chsoit 2 indices aléatoirement entre 0 à len(enfant)
         i1 , i2 = random.sample(range(len(enfant)),2) 
 
 #On échnage les villes qui sont à ces deux indices là
-    #enfant[i1] , enfant[i2] = enfant[i2], enfant[i1]
-        tmp = enfant[i1]
-        enfant[i1] = enfant[i2]
-        enfant[i2] = tmp
-    return enfant
+        #enfant[i1] , enfant[i2] = enfant[i2], enfant[i1]
+        tmp = enfant_mute[i1]
+        enfant_mute[i1] = enfant_mute[i2]
+        enfant_mute[i2] = tmp
+    return enfant_mute
     
 
 
