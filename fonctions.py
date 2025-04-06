@@ -3,10 +3,7 @@ import math
 
 
 
-                ##############CREER_POPULATION################
-
-
-                
+                ############# CREER_POPULATION ##############               
 def creer_population(villes, taille_population): #on veut une population initiale d'itinéraires
     population = []
     n = len(villes)  # Nombre total de villes
@@ -16,10 +13,8 @@ def creer_population(villes, taille_population): #on veut une population initial
         population.append(individu)
 
     return population
-        
-
-                ######################FITNESS################################
-
+  
+                #################### FITNESS #############################
 def distance (ville1,ville2):
     x1,y1= ville1[:2]
     x2,y2= ville2[:2]
@@ -35,10 +30,7 @@ def fitness (itinéraire): #évaluer la qualité de l'itinéraire, plus la dista
     print(f"distance totale pour {itinéraire} = {distance_totale}")
     return 1/ distance_totale 
 
-
-
-                #####################SELECTION#####################
-
+                #################### SELECTION ###################
 def selection(population,k) :#on lui donnera la population générée en paramètre 
 #cette fonction a pour but de séléctionner et retourner 2 meilleurs parents 
 
@@ -69,10 +61,8 @@ def selection(population,k) :#on lui donnera la population générée en paramè
     parent2=max(c2,key=fitness)
 
     return parent1,parent2
-
-
-                #############CROSS_OVER####################
-
+  
+                ############ RECOMBINAISON ###################
 def crossover(parent1,parent2):
     #cette fonction nous servira à utiliser les 2 parents retourner par selction
     #pour créer un enfant  , on va utiliser le Cross OX qui est très celèbre
@@ -115,9 +105,8 @@ def crossover(parent1,parent2):
             current_ind +=1
 
     return enfant
-
-                ##############MUTATION####################
-
+  
+                ############# MUTATION ###################
 def mutation(enfant) :
     #il s'agit d'échanger  la postion des villes  pour obtenir un nouveau chemin
     # exemple = [1,2,3,4,5] -> [1,3,2,4,5] => on a échangé les places de 2 et 3 pour obtenir un new individu
@@ -137,7 +126,7 @@ def mutation(enfant) :
         enfant_mute[i2] = tmp
     return enfant_mute
 
-#############FORMATION##################
+              ############ FORMATION #################
 def formation(population,enfant) :
     #Ajout de l'enfant : L'enfant est ajouté à la population.
     #Tri par fitness : On trie la population en fonction de la fitness des individus,
