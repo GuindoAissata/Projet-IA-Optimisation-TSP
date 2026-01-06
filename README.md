@@ -34,8 +34,11 @@ Nous résolvons ce problème avec un **algorithme génétique**, inspiré de l�
 
 ## Structure du projet 
 ├── main.py # Interface graphique + exécution
+
 ├── fonctions.py # creer_population, fitness, selection, crossover, mutation, formation
-├── genetique_algo.py # fonction genetique()
+
+├── genetique_algo.py # fonction genetique()ù
+
 └── README.md
 ## Installation & Lancement
 
