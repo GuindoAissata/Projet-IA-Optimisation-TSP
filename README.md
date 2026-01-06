@@ -1,4 +1,4 @@
-# Projet IA - Traveling Salesman Problem (TSP)/ NP-hard problem - Dans le cadre d'une Licence 3 - Mars-Avril 2025 
+# Projet IA _ Traveling Salesman Problem (TSP)/ NP-hard problem _ Licence 3 _ Mars-Avril 2025 
 
 Projet réalisé dans le cadre du module ***Intelligence Artificielle**:
 
